@@ -1,4 +1,5 @@
 class LongestPalindromicSubstring:
+
     def longest_palindrome(self, s: str) -> str:
         long_palindrome_length: int = 0
         long_palindrome: str = ""
