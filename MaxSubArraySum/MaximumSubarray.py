@@ -24,7 +24,8 @@ class Solution:
         sum = 0
         for i in range(len(nums)):
             sum += nums[i]
-            max_sum = sum if sum > max_sum else max_sum
+            if sum > max_sum:
+                max_sum = sum
             if sum < 0:
                 sum = 0
 
