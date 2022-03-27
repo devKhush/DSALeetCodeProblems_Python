@@ -2,6 +2,7 @@ from typing import List, Tuple
 
 
 # https://www.youtube.com/watch?v=efNHPr1PHmM
+# Here we solved this using a Queue data structure in Python using List
 
 class SnakeGame:
 
@@ -13,6 +14,7 @@ class SnakeGame:
         self.snakeBody = [(0, 0)]
 
     def move(self, direction: str) -> int:
+        # assume head of snake at right & tail at left
         head_row, head_column = self.snakeBody[-1]
 
         if direction == 'U':
