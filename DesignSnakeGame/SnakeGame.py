@@ -1,6 +1,8 @@
 from typing import List, Tuple
 
 
+# https://www.youtube.com/watch?v=efNHPr1PHmM
+
 class SnakeGame:
 
     def __init__(self, width: int, height: int, food: List[List[int]]) -> None:
@@ -8,7 +10,7 @@ class SnakeGame:
         self.height = height
         self.food = food
         self.score = 0
-        self.snakeBody = [(0,0)]
+        self.snakeBody = [(0, 0)]
 
     def move(self, direction: str) -> int:
         head_row, head_column = self.snakeBody[-1]
@@ -27,14 +29,14 @@ class SnakeGame:
 
         if self.food and [head_row, head_column] == self.food[0]:
             self.score += 1
-            self.snakeBody.append([head_row, head_column])
+            self.snakeBody.append((head_row, head_column))
             self.food.pop(0)
         else:
             self.snakeBody.pop(0)
             if [head_row, head_column] in self.snakeBody:
                 return -1
             else:
-                self.snakeBody.append([head_row, head_column])
+                self.snakeBody.append((head_row, head_column))
 
         return self.score
 
